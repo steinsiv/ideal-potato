@@ -21,9 +21,9 @@ updates:
     commit-message:
       prefix: "nuget"
 
-    - package-ecosystem: "docker"
-      directory: "/"
-      schedule:
-        interval: "daily"
-      commit-message:
-        prefix: "nuget"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "nuget"
