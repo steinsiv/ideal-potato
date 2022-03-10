@@ -1,0 +1,23 @@
+name: Manually deploy things
+
+on:
+  workflow_dispatch:
+    inputs:
+      inputfield:
+        description: 'Anything'
+        required: false
+
+env:
+  ENV_EXAMPLE: 'something'
+
+jobs:
+  mainjob:
+    if: github.event.inputs.inputfield != null
+    runs-on: Linux
+    steps:
+      - name: Shellscript
+        id: shell
+        run: |
+          INPUT=${{ github.event.inputs.inputfield }}
+          echo "if != null: "
+          echo "$INPUT"
