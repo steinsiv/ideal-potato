@@ -13,7 +13,7 @@ env:
 jobs:
   mainjob:
     if: github.event.inputs.inputfield != null
-    runs-on: Linux
+    runs-on: ubuntu-latest
     steps:
       - name: Shellscript
         id: shell
