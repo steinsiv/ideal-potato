@@ -1,7 +1,9 @@
-name: Notify witsml-explorer CI
+name: Notify CICD
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -13,4 +15,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          gh api repos/equinor/witsml-explorer-equinor/dispatches --raw-field event_type=pr_merged
+          gh api repos/equinor/witsml-explorer-equinor/dispatches -f event_type="witsml-explorer dispatch"
