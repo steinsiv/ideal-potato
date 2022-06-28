@@ -13,7 +13,7 @@ on:
 
 jobs:
   deploy: 
-    runs-on: ubuntu-latest
+    runs-on: tmp
     steps:
       - name: SSH Test 
         uses: appleboy/ssh-action@master
