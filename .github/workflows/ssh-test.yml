@@ -1,0 +1,25 @@
+name: Test SSH action
+on:
+  workflow_dispatch:
+    inputs:
+      host:
+        description: 'Host'
+        required: true     
+        default: '-'  
+      username:
+        description: 'Username'
+        required: true     
+        default: '-'
+
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH Test 
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ inputs.host }}
+          username: ${{ inputs.username }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            whoami > /tmp/was_here.txt
